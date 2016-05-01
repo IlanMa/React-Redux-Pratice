@@ -6,9 +6,11 @@ import { bindActionCreators } from 'redux';
 
 class BookList extends Component {
 	renderList() {
-		return this.props.books.map((books) => {
+		return this.props.books.map((book) => {
 			return (
-				<li key={books.title} className="list-group-item"> {books.title} </li>
+				<li onClick={() => this.props.selectBook(book)}
+					key={book.title} className="list-group-item"> {book.title} 
+				</li>
 			)
 		})
 	}
