@@ -8,10 +8,8 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 export function fetchWeather(city) {
 	const url = `${ROOT_URL}&q=${city},us`
 	const request = axios.get(url);
-
-
 	return {
 		type: FETCH_WEATHER,
-		payload: request // request is a promise, but in the reducer file, it becomes data due to 'react-promise' middleware
+		payload: request // request is a promise, but in the reducer_weather file, it becomes data due to 'react-promise' middleware
 	};
 }
