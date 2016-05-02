@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const API_KEY = '35bc680a09a825c23cdd44e0f62e43c9';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`
 
@@ -10,6 +12,6 @@ export function fetchWeather(city) {
 
 	return {
 		type: FETCH_WEATHER,
-		payload: request
+		payload: request // request is a promise, but in the reducer file, it becomes data due to 'react-promise' middleware
 	};
 }
